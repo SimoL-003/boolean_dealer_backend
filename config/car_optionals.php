@@ -1,0 +1,28 @@
+<?php
+
+return [
+    ['name' => 'Sunroof', 'description' => 'Panoramic glass roof that lets in natural light and fresh air'],
+    ['name' => 'Leather Seats', 'description' => 'Premium leather upholstery for a luxurious feel'],
+    ['name' => 'Heated Seats', 'description' => 'Seats with built-in heating elements for cold weather comfort'],
+    ['name' => 'Ventilated Seats', 'description' => 'Seats with airflow system to keep cool in warm weather'],
+    ['name' => 'Navigation System', 'description' => 'Built-in GPS with real-time traffic updates and route guidance'],
+    ['name' => 'Blind Spot Monitor', 'description' => 'Sensors that alert the driver to vehicles in blind spots'],
+    ['name' => 'Parking Sensors', 'description' => 'Ultrasonic sensors that detect obstacles when parking'],
+    ['name' => 'Rear Camera', 'description' => 'Camera that provides a rear view when reversing'],
+    ['name' => '360° Camera', 'description' => 'Multi-camera system offering a bird\'s-eye view of the vehicle'],
+    ['name' => 'Adaptive Cruise Control', 'description' => 'Cruise control that automatically adjusts speed to maintain safe distance'],
+    ['name' => 'Lane Assist', 'description' => 'System that warns or corrects the driver when drifting out of lane'],
+    ['name' => 'Keyless Entry', 'description' => 'Allows locking and unlocking the car without using a physical key'],
+    ['name' => 'Push Button Start', 'description' => 'Engine ignition activated by a button instead of a traditional key'],
+    ['name' => 'Apple CarPlay', 'description' => 'Integration with iPhone for calls, music, and apps on the infotainment screen'],
+    ['name' => 'Android Auto', 'description' => 'Integration with Android devices for calls, music, and apps on the infotainment screen'],
+    ['name' => 'Harman Kardon Sound', 'description' => 'Premium audio system by Harman Kardon for high-fidelity sound'],
+    ['name' => 'Head-Up Display', 'description' => 'Projects key driving information onto the windshield'],
+    ['name' => 'Ambient Lighting', 'description' => 'Customizable interior lighting to set the mood and improve visibility'],
+    ['name' => 'Electric Tailgate', 'description' => 'Motorized boot lid that opens and closes automatically'],
+    ['name' => 'Tow Bar', 'description' => 'Hitch attachment for towing trailers, caravans, or bikes'],
+    ['name' => 'Sport Exhaust', 'description' => 'Performance exhaust system for enhanced sound and power output'],
+    ['name' => 'Night Vision', 'description' => 'Infrared camera system that detects pedestrians and animals in the dark'],
+    ['name' => 'Air Suspension', 'description' => 'Pneumatic suspension for a smoother ride and adjustable ride height'],
+    ['name' => 'Wireless Charging', 'description' => 'Qi-compatible pad for charging smartphones without cables'],
+];
