@@ -37,8 +37,8 @@
                                 href="{{ url('/') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('our-cars*') ? 'active' : '' }}"
-                                href="{{ url('our-cars') }}">Our Cars</a>
+                            <a class="nav-link {{ request()->is('cars*') ? 'active' : '' }}"
+                                href="{{ url('cars') }}">Our Cars</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->is('cars-settings*') ? 'active' : '' }}"

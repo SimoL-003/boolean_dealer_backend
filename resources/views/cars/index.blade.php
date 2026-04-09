@@ -38,7 +38,7 @@
                             <td>{{ $car->plate }}</td>
                             <td>{{ $car->previous_owners }}</td>
                             <td class="text-end">
-                                <a href="" class="btn-action">Details</a>
+                                <a href="{{ route('cars.show', $car) }}" class="btn-action">Details</a>
                                 <a href="" class="btn-action">Edit</a>
                                 <form action="" method="POST" class="d-inline">
                                     @csrf
