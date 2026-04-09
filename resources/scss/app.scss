@@ -1,1 +1,193 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: #f4f2ee;
+    font-family: "Nunito", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1a1a2e !important;
+    padding: 0.75rem 1.5rem;
+}
+
+.navbar-brand {
+    color: #c9a84c !important;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.1rem;
+}
+
+.navbar-brand::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c9a84c;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    padding: 0.5rem 0.75rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #c9a84c !important;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 0.25rem 0;
+}
+
+.navbar .dropdown-item {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    color: #333;
+    transition: background 0.15s;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #f5f0e8;
+    color: #1a1a2e;
+}
+
+.navbar .dropdown-item.text-danger:hover {
+    background-color: #fdf2f2;
+}
+
+/* Main content */
+main {
+    min-height: calc(100vh - 60px);
+}
+
+.page-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0;
+}
+
+.page-title::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c9a84c;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.btn-gold {
+    background: #c9a84c;
+    color: #fff !important;
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-gold:hover {
+    background: #b8963e;
+}
+
+.card-table {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e8e4dc;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.card-table .table {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.card-table thead th {
+    background: #1a1a2e;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: none;
+    padding: 0.85rem 1rem;
+}
+
+.card-table tbody tr {
+    border-bottom: 1px solid #f0ece4;
+    transition: background 0.15s;
+}
+
+.card-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.card-table tbody tr:hover {
+    background: #faf8f4;
+}
+
+.card-table tbody td {
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+    border: none;
+    color: #1a1a2e;
+}
+
+.car-model {
+    display: block;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.car-brand {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.badge-fuel {
+    background: #f5f0e8;
+    color: #b8963e;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.btn-action {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #e8e4dc;
+    color: #555;
+    background: #fff;
+    margin-right: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+.btn-action:hover {
+    border-color: #c9a84c;
+    color: #c9a84c;
+}
+
+.btn-action.danger:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}

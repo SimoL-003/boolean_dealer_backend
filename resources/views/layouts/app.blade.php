@@ -4,93 +4,94 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Boolean Dealer') }}</title>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
 
 <body>
     <div id="app">
 
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid px-3">
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                {{-- LOGO --}}
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    Boolean Dealer
-                </a>
+                {{-- Logo --}}
+                <a class="navbar-brand" href="{{ url('/') }}">Boolean Dealer</a>
 
-                {{-- BURGER MENU (mobile) --}}
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                {{-- Burger (mobile) --}}
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                <div class="collapse navbar-collapse" id="navbarMain">
+
+                    {{-- Left --}}
+                    <ul class="navbar-nav me-auto gap-1">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Dashboard</a>
+                            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
+                                href="{{ url('/') }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('our-cars*') ? 'active' : '' }}"
+                                href="{{ url('our-cars') }}">Our Cars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('cars-settings*') ? 'active' : '' }}"
+                                href="{{ url('cars-settings') }}">Cars Settings</a>
                         </li>
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    {{-- Right --}}
+                    <ul class="navbar-nav ms-auto">
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
-
-                                {{-- Nav links --}}
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
-                                    <a class="dropdown-item" href="{{ url('our-cars') }}">Our Cars</a>
-                                    <a class="dropdown-item" href="">Cars Settings</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    {{-- Logout form --}}
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('profile') }}">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         @endguest
                     </ul>
+
                 </div>
             </div>
         </nav>
 
-        <main class="">
+        <main>
             @yield('content')
         </main>
+
     </div>
 </body>
 
 </html>
+Z
