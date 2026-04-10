@@ -10,7 +10,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
 
-    @vite(['resources/js/app.js'])
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                                 href="{{ url('/') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('cars*') ? 'active' : '' }}"
+                            <a class="nav-link {{ request()->is('cars') || request()->is('cars/*') ? 'active' : '' }}"
                                 href="{{ url('cars') }}">Our Cars</a>
                         </li>
                         <li class="nav-item">

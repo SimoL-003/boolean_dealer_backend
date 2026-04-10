@@ -17,6 +17,7 @@ class FuelTypesTableSeeder extends Seeder
             $newFuelType = new FuelType();
             $newFuelType->name = $fuelType['name'];
             $newFuelType->is_electrified = $fuelType['is_electrified'];
+            $newFuelType->description = $fuelType['description'];
             $newFuelType->save();
         }
     }
