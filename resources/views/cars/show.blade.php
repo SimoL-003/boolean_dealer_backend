@@ -9,7 +9,7 @@
         {{-- Hero --}}
         <div class="car-hero">
             @if ($car->image_url)
-                <div class="car-hero-img {{ $car->image_url ? '' : 'placeholder' }}">
+                <div class="car-hero-img">
                     <img src="{{ asset('storage/' . $car->image_url) }}" alt="{{ $car->carModel->name }}">
                 </div>
             @endif
@@ -27,7 +27,7 @@
 
         {{-- Actions --}}
         <div class="car-actions">
-            <a href="" class="btn-gold">Edit</a>
+            <a href="{{ route('cars.edit', $car) }}" class="btn-gold">Edit</a>
             <form action="{{ route('cars.destroy', $car) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')

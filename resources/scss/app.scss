@@ -458,6 +458,11 @@ main {
         border-color: $gold;
         box-shadow: 0 0 0 3px rgba($gold, 0.12);
     }
+
+    &::placeholder {
+        color: #bbb;
+        opacity: 1;
+    }
 }
 
 .input-group-text {

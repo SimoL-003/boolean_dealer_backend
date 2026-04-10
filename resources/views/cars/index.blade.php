@@ -39,7 +39,7 @@
                             <td>{{ $car->previous_owners }}</td>
                             <td class="text-end">
                                 <a href="{{ route('cars.show', $car) }}" class="btn-action">Details</a>
-                                <a href="" class="btn-action">Edit</a>
+                                <a href="{{ route('cars.edit', $car) }}" class="btn-action">Edit</a>
                                 <form action="{{ route('cars.destroy', $car) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
