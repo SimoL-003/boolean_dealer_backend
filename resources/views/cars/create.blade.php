@@ -162,13 +162,6 @@
     </div>
 
     <script>
-        // Toggle optional tags
-        // document.querySelectorAll('.optional-tag').forEach(tag => {
-        //     tag.addEventListener('click', () => {
-        //         tag.classList.toggle('checked');
-        //     });
-        // });
-
         // Dynamic model loading
         document.getElementById('brand').addEventListener('change', function() {
             const brandId = this.value;
