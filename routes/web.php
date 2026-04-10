@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\ProfileController;
+use App\Models\CarModel;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -19,5 +20,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('cars', CarsController::class)->middleware(['auth', 'verified']);
+
+Route::get('/brands/{brand}/models', function ($brandId) {
+    return CarModel::where('brand_id', $brandId)->get();
+});
 
 require __DIR__ . '/auth.php';

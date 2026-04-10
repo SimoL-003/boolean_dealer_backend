@@ -8,9 +8,9 @@
 
         {{-- Hero --}}
         <div class="car-hero">
-            @if ($car->image)
-                <div class="car-hero-img {{ $car->image ? '' : 'placeholder' }}">
-                    <img src="{{-- {{ asset('storage/' . $car->image) }} --}}" alt="{{ $car->carModel->name }}">
+            @if ($car->image_url)
+                <div class="car-hero-img {{ $car->image_url ? '' : 'placeholder' }}">
+                    <img src="{{ asset('storage/' . $car->image_url) }}" alt="{{ $car->carModel->name }}">
                 </div>
             @endif
             <div class="car-hero-info">

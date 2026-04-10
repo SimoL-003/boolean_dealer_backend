@@ -6,7 +6,7 @@
         {{-- Header --}}
         <div class="d-flex align-items-center justify-content-between py-4">
             <h1 class="page-title">Our Cars</h1>
-            <a href="" class="btn btn-gold">+ Add Car</a>
+            <a href="{{ route('cars.create') }}" class="btn btn-gold">+ Add Car</a>
         </div>
 
         {{-- Table --}}
@@ -31,11 +31,11 @@
                                 <span class="car-model">{{ $car->carModel->name }}</span>
                                 <span class="car-brand">{{ $car->carModel->brand->name }}</span>
                             </td>
-                            <td>{{ number_format($car->price, 2, '.', "'") }} €</td>
-                            <td>{{ number_format($car->km, 0, '.', "'") }} km</td>
-                            <td>{{ $car->year }}</td>
+                            <td>{{ $car->price ? number_format($car->price, 2, '.', "'") . ' €' : 'N/D' }}</td>
+                            <td>{{ $car->km ? number_format($car->km, 0, '.', "'") . ' km' : 'N/D' }}</td>
+                            <td>{{ $car->year ?? 'N/D' }}</td>
                             <td><span class="badge-fuel">{{ $car->fuelType->name }}</span></td>
-                            <td>{{ $car->plate }}</td>
+                            <td>{{ $car->plate ?? 'N/D' }}</td>
                             <td>{{ $car->previous_owners }}</td>
                             <td class="text-end">
                                 <a href="{{ route('cars.show', $car) }}" class="btn-action">Details</a>

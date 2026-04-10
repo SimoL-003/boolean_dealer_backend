@@ -11,8 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->decimal('price')->nullable()->change();
-            $table->decimal('km')->nullable()->change();
+            $table->integer('previous_owners')->nullable()->change();
         });
     }
 
@@ -22,8 +21,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->integer('price')->nullable()->change();
-            $table->integer('km')->nullable()->change();
+            $table->integer('previous_owners')->default(1)->change();
         });
     }
 };
