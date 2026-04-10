@@ -28,7 +28,7 @@
         {{-- Actions --}}
         <div class="car-actions">
             <a href="" class="btn-gold">Edit</a>
-            <form action="" method="POST" class="d-inline">
+            <form action="{{ route('cars.destroy', $car) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn-danger-outline"

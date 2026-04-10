@@ -40,7 +40,7 @@
                             <td class="text-end">
                                 <a href="{{ route('cars.show', $car) }}" class="btn-action">Details</a>
                                 <a href="" class="btn-action">Edit</a>
-                                <form action="" method="POST" class="d-inline">
+                                <form action="{{ route('cars.destroy', $car) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-action danger"

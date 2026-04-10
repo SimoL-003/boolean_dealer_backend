@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class CarsController extends Controller
 {
@@ -103,8 +104,14 @@ class CarsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Car $car): RedirectResponse
     {
-        //
+        if ($car->image_url) {
+            Storage::delete($car->image_url);
+        }
+        $car->optionals()->detach();
+        $car->delete();
+
+        return Redirect::route('cars.index');
     }
 }
