@@ -31,7 +31,18 @@ class FuelTypesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newFuelType = new FuelType();
+        $newFuelType->name = $data['name'];
+        $newFuelType->description = $data['description'];
+        if (array_key_exists('is_electrified', $data)) {
+            $newFuelType->is_electrified = $data['is_electrified'];
+        } else {
+            $newFuelType->is_electrified = false;
+        }
+        $newFuelType->save();
+
+        return Redirect::route('cars-settings.fuel-types.index');
     }
 
     /**
@@ -47,7 +58,7 @@ class FuelTypesController extends Controller
      */
     public function edit(FuelType $fuelType)
     {
-        //
+        return view('fuel-types.edit', compact('fuelType'));
     }
 
     /**
@@ -55,7 +66,17 @@ class FuelTypesController extends Controller
      */
     public function update(Request $request, FuelType $fuelType)
     {
-        //
+        $data = $request->all();
+        $fuelType->name = $data['name'];
+        $fuelType->description = $data['description'];
+        if (array_key_exists('is_electrified', $data)) {
+            $fuelType->is_electrified = true;
+        } else {
+            $fuelType->is_electrified = false;
+        }
+        $fuelType->update();
+
+        return Redirect::route('cars-settings.fuel-types.index');
     }
 
     /**

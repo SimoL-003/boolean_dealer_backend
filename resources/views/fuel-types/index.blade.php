@@ -36,7 +36,8 @@
                             <td>{{ $fuelType->is_electrified ? 'Yes' : 'No' }}</td>
                             <td>{{ $fuelType->description }}</td>
                             <td class="text-end">
-                                <a href="" class="btn-action">Edit</a>
+                                <a href="{{ route('cars-settings.fuel-types.edit', $fuelType) }}"
+                                    class="btn-action">Edit</a>
                                 <form action="{{ route('cars-settings.fuel-types.destroy', $fuelType) }}" method="POST"
                                     class="d-inline">
                                     @csrf
