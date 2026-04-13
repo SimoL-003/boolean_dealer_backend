@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\Admin\FuelTypesController;
+use App\Http\Controllers\Admin\OptionalsController;
 use App\Http\Controllers\ProfileController;
 use App\Models\CarModel;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::middleware(['auth', 'verified'])->prefix('cars-settings')
         })->name('index');
 
         Route::resource('fuel-types', FuelTypesController::class);
+        Route::resource('optionals', OptionalsController::class);
     });
 
 Route::middleware('auth')->group(function () {

@@ -12,7 +12,7 @@
         </div>
         <div>
 
-            <a href="">Optionals</a>
+            <a href="{{ route('cars-settings.optionals.index') }}">Optionals</a>
         </div>
     </div>
 @endsection

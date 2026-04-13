@@ -91,7 +91,6 @@ class FuelTypesController extends Controller
 
         $fuelType->delete();
 
-        return Redirect::route('cars-settings.fuel-types.index')
-            ->with('success', 'Fuel type deleted successfully.');
+        return Redirect::route('cars-settings.fuel-types.index');
     }
 }
