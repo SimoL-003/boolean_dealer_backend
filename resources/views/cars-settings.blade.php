@@ -11,7 +11,7 @@
         <div class="row g-3">
 
             <div class="col-md-3">
-                <a href="{{-- {{ route('cars-settings.brands.index') }} --}}" class="settings-card">
+                <a href="{{ route('cars-settings.brands.index') }}" class="settings-card">
                     <div class="settings-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M12 2L2 7l10 5 10-5-10-5z" />
