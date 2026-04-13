@@ -472,3 +472,68 @@ main {
     color: $gold-hover;
     font-weight: 600;
 }
+
+// ─── Settings dashboard ───────────────────────────────────────
+.page-subtitle {
+    font-size: 0.82rem;
+    color: $text-muted-custom;
+    margin-top: 4px;
+    margin-left: 16px;
+}
+
+.settings-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid $border;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+
+    &:hover {
+        border-color: $gold;
+        box-shadow: 0 4px 16px rgba($gold, 0.1);
+        transform: translateY(-2px);
+    }
+}
+
+.settings-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: $gold-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    svg {
+        width: 22px;
+        height: 22px;
+        stroke: $gold;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+}
+
+.settings-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $dark;
+    margin-bottom: 4px;
+}
+
+.settings-card-desc {
+    font-size: 0.78rem;
+    color: $text-muted-custom;
+    line-height: 1.5;
+}
+
+.settings-card-arrow {
+    font-size: 0.8rem;
+    color: $gold;
+    margin-top: 1rem;
+    display: inline-block;
+}

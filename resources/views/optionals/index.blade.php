@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container">
-        <div class="d-flex align-items-center justify-content-between py-4">
+        <a href="{{ route('cars-settings.index') }}" class="back-link">Back to cars settings</a>
+        <div class="d-flex align-items-center justify-content-between pb-4 pt-2">
             <h1 class="page-title">Optionals available in our cars</h1>
             <a href="{{ route('cars-settings.optionals.create') }}" class="btn btn-gold">+ Add Optional</a>
         </div>
