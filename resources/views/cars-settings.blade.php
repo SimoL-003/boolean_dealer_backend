@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-md-3">
-                <a href="{{-- {{ route('cars-settings.models.index') }} --}}" class="settings-card">
+                <a href="{{ route('cars-settings.models.index') }}" class="settings-card">
                     <div class="settings-icon">
                         <svg viewBox="0 0 24 24">
                             <rect x="2" y="7" width="20" height="14" rx="2" />

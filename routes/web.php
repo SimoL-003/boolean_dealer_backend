@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BrandsController;
+use App\Http\Controllers\Admin\CarModelsController;
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\Admin\FuelTypesController;
 use App\Http\Controllers\Admin\OptionalsController;
@@ -23,6 +24,7 @@ Route::middleware(['auth', 'verified'])->prefix('cars-settings')
         Route::resource('fuel-types', FuelTypesController::class);
         Route::resource('optionals', OptionalsController::class);
         Route::resource('brands', BrandsController::class);
+        Route::resource('models', CarModelsController::class);
     });
 
 Route::middleware('auth')->group(function () {

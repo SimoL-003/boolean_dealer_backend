@@ -74,7 +74,7 @@ class BrandsController extends Controller
     {
         if ($brand->CarModels()->exists()) {
             return Redirect::route('cars-settings.brands.index')
-                ->with('error', 'Cannot delete this brand because it is associated with one or more cars.');
+                ->with('error', 'Cannot delete this brand because it is associated with one or more models.');
         }
         $brand->delete();
 

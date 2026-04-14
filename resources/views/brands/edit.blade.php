@@ -19,7 +19,7 @@
                     <div class="col-md-6">
                         <label for="name" class="form-label">Name *</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                            name="name" placeholder="Ferrari" value="{{ $brand->name }}">
+                            name="name" placeholder="Ferrari" value="{{ $brand->name }}" required>
                         @error('name')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -44,7 +44,7 @@
 
             {{-- Actions --}}
             <div class="d-flex gap-2 mb-4">
-                <button type="submit" class="btn-gold">Add Brand</button>
+                <button type="submit" class="btn-gold">Update Brand</button>
                 <a href="{{ route('cars-settings.brands.index') }}" class="btn-cancel">Cancel</a>
             </div>
 
